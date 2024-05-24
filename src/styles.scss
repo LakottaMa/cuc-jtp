@@ -1,1 +1,29 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-display: swap;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    src: url("./assets/fonts/inter-v13-latin-regular.woff2") format("woff2");
+}
+
+@font-face {
+    font-display: swap;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    src: url("./assets/fonts/inter-v13-latin-700.woff2") format("woff2");
+}
+@import '../node_modules/material-icons/iconfont/material-icons.css';
+:root {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100dvh;
+}
