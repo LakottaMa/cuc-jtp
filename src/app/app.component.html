@@ -1,3 +1,13 @@
-<h1>CuC</h1>
-<button mat-mini-fab color="primary"><mat-icon>more_vert</mat-icon></button>
-<router-outlet />
+<mat-drawer-container class="drawer-container" autosize>
+    <mat-drawer #drawer class="sidenav-content" mode="side">
+        <!-- <app-sidenav></app-sidenav> -->
+        <h1>Dashborad</h1>
+    </mat-drawer>
+    <mat-toolbar role="heading" color="primary">
+        <button type="button" mat-icon-button (click)="drawer.toggle()">
+            <mat-icon fontIcon="more_vert"></mat-icon>
+        </button>
+        <span>Colors under Control</span>
+    </mat-toolbar>
+    <router-outlet />
+</mat-drawer-container>
