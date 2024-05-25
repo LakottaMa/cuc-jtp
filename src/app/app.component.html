@@ -1,13 +1,22 @@
 <mat-drawer-container class="drawer-container" autosize>
     <mat-drawer #drawer class="sidenav-content" mode="side">
-        <!-- <app-sidenav></app-sidenav> -->
-        <h1>Dashborad</h1>
+        <div class="side-nav-logo">logo</div>
+
+        <ul>
+            <li routerLink='/dashboard' routerLinkActive="active-link"><button mat-button><mat-icon fontIcon="dashboard"></mat-icon> Dashboard</button></li>
+            <li routerLink='/colors' routerLinkActive="active-link"><button mat-button><mat-icon fontIcon="color_lense"></mat-icon> Add new Colors</button></li>
+            <li routerLink='/manufacturer' routerLinkActive="active-link"><button mat-button><mat-icon></mat-icon> Manufacturer</button></li>
+            <li routerLink='/uppliers' routerLinkActive="active-link"><button mat-button><mat-icon></mat-icon> Suppliers</button></li>
+        </ul>
+
     </mat-drawer>
     <mat-toolbar role="heading" color="primary">
-        <button type="button" mat-icon-button (click)="drawer.toggle()">
+        <button mat-icon-button (click)="drawer.toggle()">
             <mat-icon fontIcon="more_vert"></mat-icon>
         </button>
         <span>Colors under Control</span>
     </mat-toolbar>
-    <router-outlet />
+    <div class="router-container">
+        <router-outlet></router-outlet>
+    </div>
 </mat-drawer-container>

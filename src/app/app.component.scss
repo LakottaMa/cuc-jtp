@@ -1,8 +1,49 @@
-
 .drawer-container {
-height: 100dvh;
+    height: 100dvh;
 }
 
 .sidenav-content {
-    padding: 20px;
+    padding: 0 16px;
+}
+
+.side-nav-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 54px;
+}
+
+mat-toolbar {
+    height: 54px;
+    gap: 16px;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    list-style: none;
+    padding: 24px;
+    margin: 0;
+    li {
+        button {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            width: 100%;
+            height: 100%;
+            padding: 16px;
+            border-radius: 12px;
+            gap: 8px;
+        }
+    }
+}
+
+.active-link {
+    background-color: #d1d1d181;
+    border-radius: 12px;
+}
+
+.router-container {
+    padding: 16px 56px;
 }
