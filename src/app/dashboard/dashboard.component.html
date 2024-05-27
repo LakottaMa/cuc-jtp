@@ -1,1 +1,14 @@
-<p>dashboard works!</p>
+<mat-card>
+    <mat-card-content>
+        <table>
+            <tr>
+                <th>Color</th>
+                <th>Charge</th>
+            </tr>
+            <tr *ngFor="let color of allColors">
+                <td>{{color.name}}</td>
+                <td>{{color.charge}}</td>
+            </tr>
+        </table>
+    </mat-card-content>
+</mat-card>

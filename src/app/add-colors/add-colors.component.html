@@ -1,1 +1,8 @@
-<p>add-colors works!</p>
+
+<mat-form-field appearance="outline">
+    <input matInput [(ngModel)]="colors.name" placeholder="Color Name">
+</mat-form-field>
+<mat-form-field appearance="outline">
+    <input matInput [(ngModel)]="colors.charge" placeholder="Color charge">
+</mat-form-field>
+<button type="submit" mat-icon-button color="primary" (click)="addColor()"><mat-icon fontIcon="add"></mat-icon></button>
