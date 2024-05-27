@@ -1,1 +1,28 @@
-<p>colors-details works!</p>
+<section>
+    <mat-dialog-content>
+        <form #colorForm="ngForm">
+            <div>
+                <mat-form-field appearance="outline">
+                    <mat-label>Color</mat-label>
+                    <mat-select [(ngModel)]="colors.name" name="name" required>
+                        <mat-option value="blue">blue</mat-option>
+                        <mat-option value="red">red</mat-option>
+                        <mat-option value="yellow">yellow</mat-option>
+                        <mat-option value="white">white</mat-option>
+                        <mat-option value="black">black</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="outline">
+                    <mat-label>Charge</mat-label>
+                    <input matInput value="" [(ngModel)]="colors.charge" name="charge" required>
+                </mat-form-field>
+            </div>
+        </form>
+    </mat-dialog-content>
+    <mat-dialog-actions>
+        <button mat-button (click)="cancel()">Cancel</button>
+        <button mat-button (click)="save()">Save</button>
+    </mat-dialog-actions>
+</section>
