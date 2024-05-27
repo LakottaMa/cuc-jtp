@@ -1,8 +1,23 @@
-
-<mat-form-field appearance="outline">
-    <input matInput [(ngModel)]="colors.name" placeholder="Color Name">
-</mat-form-field>
-<mat-form-field appearance="outline">
-    <input matInput [(ngModel)]="colors.charge" placeholder="Color charge">
-</mat-form-field>
-<button type="submit" mat-icon-button color="primary" (click)="addColor()"><mat-icon fontIcon="add"></mat-icon></button>
+<section>
+  <form #colorForm="ngForm" (ngSubmit)="addColor()">
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Color</mat-label>
+        <mat-select [(ngModel)]="colors.name" name="name" required>
+          <mat-option value="blue">blue</mat-option>
+          <mat-option value="red">red</mat-option>
+          <mat-option value="yellow">yellow</mat-option>
+          <mat-option value="white">white</mat-option>
+          <mat-option value="black">black</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Charge</mat-label>
+        <input matInput [(ngModel)]="colors.charge" name="charge" required>
+      </mat-form-field>
+    </div>
+    <button type="submit" mat-raised-button color="primary" [disabled]="!colors.name || !colors.charge">save</button>
+  </form>
+</section>

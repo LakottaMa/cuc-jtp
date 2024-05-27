@@ -1,7 +1,7 @@
 export class Colors {
     id?: string;
     name: string;
-    charge: number;
+    charge: string;
 
     constructor(obj?: any) {
         this.name = obj ? obj.name : '';

@@ -4,7 +4,8 @@ import { AddColorsComponent } from './add-colors/add-colors.component';
 
 
 export const routes: Routes = [
-    { path: '', component: DashboardComponent },
     { path: 'dashboard', component: DashboardComponent },
-    { path: 'colors', component: AddColorsComponent }
+    { path: 'colors', component: AddColorsComponent },
+    { path: 'colors/:id', component: AddColorsComponent },
+    { path: '', redirectTo: '/dashboard', pathMatch: 'full' }
 ];

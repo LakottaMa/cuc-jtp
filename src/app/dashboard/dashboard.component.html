@@ -1,3 +1,4 @@
+<section>
 <mat-card>
     <mat-card-content>
         <table>
@@ -8,7 +9,10 @@
             <tr *ngFor="let color of allColors">
                 <td>{{color.name}}</td>
                 <td>{{color.charge}}</td>
+                <button mat-icon-button (click)="deleteColor(color)"><mat-icon fontIcon="delete"></mat-icon></button>
+                <button mat-icon-button (click)="editColor(color)"><mat-icon fontIcon="edit"></mat-icon></button>
             </tr>
         </table>
     </mat-card-content>
 </mat-card>
+</section>

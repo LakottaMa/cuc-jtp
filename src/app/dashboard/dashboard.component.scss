@@ -1,0 +1,47 @@
+section{
+    padding: 12px;
+    background-color: #949494;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    row-gap: 16px;
+    border-radius: 8px;
+}
+
+mat-card {
+    min-width: 400px;
+    width: fit-content;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow:
+        0 3px 6px rgba(0, 0, 0, 0.16),
+        0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+table{
+    width: 100%;
+    tr{
+        margin-top: 8px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    td {
+        width: 100%;
+        text-align: start;
+    }
+    th{
+        text-align: start;
+    }
+    button{
+        margin-left: 10px;
+    }
+}
+
+td:nth-child(1), th:nth-child(1){
+    max-width: 94px;
+    min-width: 94px;
+    width: 100%;
+}
