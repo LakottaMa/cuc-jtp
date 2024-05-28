@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-import { Firestore, onSnapshot, collection, doc, deleteDoc } from '@angular/fire/firestore';
+import { Firestore, onSnapshot, collection, doc, deleteDoc, Timestamp } from '@angular/fire/firestore';
 import { Colors } from '../shared/modul/collors.class';
 import { MatDialog } from '@angular/material/dialog';
 import { ColorsDetailsComponent } from '../colors-details/colors-details.component';
@@ -19,7 +19,6 @@ import { ColorsDetailsComponent } from '../colors-details/colors-details.compone
 export class DashboardComponent implements OnInit {
   allColors: Colors[] = [];
   private unsubscribe: any;
-
   constructor(public firestore: Firestore, public dialog: MatDialog) { }
 
   ngOnInit() {
@@ -38,8 +37,10 @@ export class DashboardComponent implements OnInit {
       querySnapshot.forEach((doc) => {
         const colorData = doc.data() as Colors;
         colorData.id = doc.id;
+        if (colorData.date instanceof Timestamp) {
+          colorData.date = colorData.date.toDate();
+        }
         this.allColors.push(colorData);
-        console.log('load from db', colorData);
       });
     })
   }
@@ -52,10 +53,7 @@ export class DashboardComponent implements OnInit {
   }
 
   editColor(color: Colors) {
-    const dialogRef = this.dialog.open(ColorsDetailsComponent);
+    const dialogRef = this.dialog.open(ColorsDetailsComponent, {restoreFocus: false});
     dialogRef.componentInstance.colors = color;
-    dialogRef.afterClosed().subscribe(() => {
-      this.loadColors();
-    });
   }
 }

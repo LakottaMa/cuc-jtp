@@ -1,11 +1,30 @@
-section{
-    padding: 16px;
+section {
+    padding: 16px 16px 0 16px;
     background-color: #949494;
     width: fit-content;
     border-radius: 8px;
 }
 
-mat-dialog-actions{
+.cancel-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+}
+
+.button-container {
+    padding: 0 0 16px 0;
     display: flex;
     justify-content: space-evenly;
+}
+
+.dialog-content {
+    padding: 16px 16px 0 16px !important;
+    width: 300px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

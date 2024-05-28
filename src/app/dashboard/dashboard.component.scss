@@ -23,10 +23,11 @@ mat-card {
 table{
     width: 100%;
     tr{
-        margin-top: 8px;
+        margin: 4px 0 4px 0;
         display: flex;
         justify-content: flex-start;
         align-items: center;
+        border-bottom: 1px solid #949494;
     }
     td {
         width: 100%;
@@ -34,6 +35,7 @@ table{
     }
     th{
         text-align: start;
+        margin-bottom: 8px;
     }
     button{
         margin-left: 10px;
@@ -44,4 +46,8 @@ td:nth-child(1), th:nth-child(1){
     max-width: 94px;
     min-width: 94px;
     width: 100%;
+}
+
+th:nth-child(3){
+    margin-left: 14%;
 }

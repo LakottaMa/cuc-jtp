@@ -5,11 +5,12 @@
             <tr>
                 <th>Color</th>
                 <th>Charge</th>
+                <th>expiry date</th>
             </tr>
             <tr *ngFor="let color of allColors">
                 <td>{{color.name}}</td>
                 <td>{{color.charge}}</td>
-                <button mat-icon-button (click)="deleteColor(color)"><mat-icon fontIcon="delete"></mat-icon></button>
+                <td>{{color.date | date:"dd.MM.yyyy"}}</td>
                 <button mat-icon-button (click)="editColor(color)"><mat-icon fontIcon="edit"></mat-icon></button>
             </tr>
         </table>
